@@ -11,62 +11,68 @@ overflow:hidden;
 
 .heart-container{
 text-align:center;
-animation:moveUp 4s forwards;
+animation:slideUp 2s forwards;
 }
 
 .text{
-margin-top:20px;
-font-size:40px;
+margin-top:30px;
+font-size:45px;
 color:#ff2a6d;
+font-weight:bold;
+letter-spacing:2px;
+text-transform:uppercase;
 opacity:0;
-animation:showText 4s forwards;
-animation-delay:2s;
+animation:showText 2s forwards;
+animation-delay:1s;
 }
 
-/* trái tim */
+/* trái tim to */
 
 .heart{
-width:150px;
-height:150px;
+width:260px;
+height:260px;
 background:red;
 position:relative;
 transform:rotate(-45deg);
-animation:spin 3s;
 box-shadow:0 20px 40px rgba(0,0,0,0.3);
+opacity:0;
+animation:fadeHeart 2s forwards;
 }
 
 .heart:before,
 .heart:after{
 content:"";
-width:150px;
-height:150px;
+width:260px;
+height:260px;
 background:red;
 border-radius:50%;
 position:absolute;
 }
 
 .heart:before{
-top:-75px;
+top:-130px;
 left:0;
 }
 
 .heart:after{
-left:75px;
+left:130px;
 top:0;
 }
 
 /* animation */
 
-@keyframes spin{
+@keyframes fadeHeart{
 0%{
-transform:rotateY(0deg) rotate(-45deg) scale(2);
+opacity:0;
+transform:translateY(80px) rotate(-45deg);
 }
 100%{
-transform:rotateY(360deg) rotate(-45deg) scale(1);
+opacity:1;
+transform:translateY(0) rotate(-45deg);
 }
 }
 
-@keyframes moveUp{
+@keyframes slideUp{
 0%{
 transform:translateY(0);
 }
@@ -82,23 +88,4 @@ opacity:0;
 100%{
 opacity:1;
 }
-}
-
-.login{
-margin-top:40px;
-}
-
-input{
-padding:10px;
-border-radius:10px;
-border:none;
-}
-
-button{
-padding:10px 20px;
-border:none;
-background:#ff2a6d;
-color:white;
-border-radius:10px;
-cursor:pointer;
   }
