@@ -1,0 +1,104 @@
+body{
+background:#ffd6e7;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+height:100vh;
+font-family:sans-serif;
+overflow:hidden;
+}
+
+.heart-container{
+text-align:center;
+animation:moveUp 4s forwards;
+}
+
+.text{
+margin-top:20px;
+font-size:40px;
+color:#ff2a6d;
+opacity:0;
+animation:showText 4s forwards;
+animation-delay:2s;
+}
+
+/* trái tim */
+
+.heart{
+width:150px;
+height:150px;
+background:red;
+position:relative;
+transform:rotate(-45deg);
+animation:spin 3s;
+box-shadow:0 20px 40px rgba(0,0,0,0.3);
+}
+
+.heart:before,
+.heart:after{
+content:"";
+width:150px;
+height:150px;
+background:red;
+border-radius:50%;
+position:absolute;
+}
+
+.heart:before{
+top:-75px;
+left:0;
+}
+
+.heart:after{
+left:75px;
+top:0;
+}
+
+/* animation */
+
+@keyframes spin{
+0%{
+transform:rotateY(0deg) rotate(-45deg) scale(2);
+}
+100%{
+transform:rotateY(360deg) rotate(-45deg) scale(1);
+}
+}
+
+@keyframes moveUp{
+0%{
+transform:translateY(0);
+}
+100%{
+transform:translateY(-120px);
+}
+}
+
+@keyframes showText{
+0%{
+opacity:0;
+}
+100%{
+opacity:1;
+}
+}
+
+.login{
+margin-top:40px;
+}
+
+input{
+padding:10px;
+border-radius:10px;
+border:none;
+}
+
+button{
+padding:10px 20px;
+border:none;
+background:#ff2a6d;
+color:white;
+border-radius:10px;
+cursor:pointer;
+  }
